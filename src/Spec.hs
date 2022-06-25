@@ -40,7 +40,7 @@ correrTests = hspec $ do
     rojo `shouldSatisfy` estanCerca azul {distanciaRecorrida = 5}
   it "no se cumple si son iguales" $ do
     rojo `shouldNotSatisfy` estanCerca rojo {distanciaRecorrida = 5}
-  it "no se cumple si son iguales" $ do
+  it "no se cumple si esta lejos" $ do
     rojo `shouldNotSatisfy` estanCerca azul {distanciaRecorrida = 100}
   it "no se cumple si la distancia es 10" $ do
     rojo `shouldNotSatisfy` estanCerca rojo {distanciaRecorrida = 10}
@@ -56,7 +56,7 @@ correrTests = hspec $ do
  describe "Test de puesto de un auto" $ do
   it "esta en primer puesto si le va ganando a todos" $ do
     puestoDeUnAuto (autoEnCarrera rojo carreraTranquilaParaElRojo) carreraTranquilaParaElRojo `shouldBe` 1
-  it "esta en ultimp puesto si no le gana a nadie" $ do
+  it "esta en ultimo puesto si no le gana a nadie" $ do
     puestoDeUnAuto (autoEnCarrera rojo carreraAvanzada) carreraAvanzada `shouldBe` 3
 
  describe "Test de correr" $ do
